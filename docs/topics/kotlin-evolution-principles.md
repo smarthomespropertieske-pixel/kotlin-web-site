@@ -210,12 +210,13 @@ We provide compatibility options that make a new Kotlin version emulate the beha
 
 * `-language-version X.Y` – compatibility mode for Kotlin language version X.Y. The compiler reports errors when your code uses language
   features introduced in later versions.
-* `-api-version X.Y` – compatibility mode for Kotlin API version X.Y. The compiler ignores declarations in your code that use Kotlin standard
+* `-api-version X.Y` – compatibility mode for Kotlin API version X.Y. The compiler ignores declarations that use Kotlin standard
   library APIs introduced in later versions, including APIs referenced by compiler-generated code.
 
 To give you more time to migrate, on the JVM we support at least three previous language and API versions in addition to the 
-latest stable version. On other platforms, you can use older language and API versions, but then you can't use newer 
-language features or standard library APIs.
+latest stable version. This lets library authors adopt newer compiler releases while remaining compatible with consumers
+using older compiler versions. On other platforms, you can also configure older language and API versions, but unlike 
+on the JVM, consumers still need to use the latest compiler version.
 
 In most projects, set both options to the same version. A lower API version is mainly useful when you
 need to remain compatible with an older version of the Kotlin standard library.
