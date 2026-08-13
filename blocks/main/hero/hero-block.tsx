@@ -15,6 +15,7 @@ import AIIcon from './images/icons/ai.svg';
 import AndroidIcon from './images/icons/android.svg';
 import KotlinIcon from './images/icons/Kotlin.svg';
 import { WhyKotlin } from '@/blocks/main/why-kotlin/why-kotlin';
+import { Button } from '@rescui/button';
 
 interface Props {
 }
@@ -31,6 +32,10 @@ export const HeroBlock: FC<Props> = ({}) => {
                     <p className={cn(darkTextCn('rs-subtitle-1'), styles.subtitle)}>Concise. Multiplatform. Fun.</p>
 
                     <Developer />
+
+                    <Button href="/docs/getting-started.html" size="l" theme="light" data-testid={'ab-hero-button'} className={styles.heroButton}>
+                        Get started
+                    </Button>
                 </div>
 
                 <div className={styles.navItems}>
